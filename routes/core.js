@@ -32,8 +32,7 @@ exports.lookup = function(req, res){
 	http.get(url).end(function(response){
 		fc_response = response;
 		async.parallel({
-			twitter: getTwitterInfo,
-			linkedin: getLinkedInInfo
+			twitter: getTwitterInfo
 		},
 			sendEmail
 		);
@@ -127,6 +126,7 @@ function sendEmail(err, results){
 		template_content: null,
 		message: message
 		}, function(result){
+			res.send("sent");
 			console.log(result);
 		}, function(err) {
 			console.log(err);
