@@ -126,7 +126,6 @@ function sendEmail(err, results){
 		template_content: null,
 		message: message
 		}, function(result){
-			res.send("sent");
 			console.log(result);
 		}, function(err) {
 			console.log(err);
