@@ -114,7 +114,7 @@ function sendEmail(err, results){
 
 
 	Mandrill.messages.sendTemplate({
-		template_name: "CompassDev",
+		template_name: "Compass Full",
 		template_content: template_content,
 		message: message
 		}, function(result){
