@@ -20,8 +20,8 @@ var T = new twitter({
 exports.getTwitter = function(response, cb){
 	
 	T.get("users/show",{"screen_name":response.username},function(err, data, resp){
-		
-		if(!err){
+	console.log(data);	
+	if(!err){
 			jade.renderFile("public/components/emailTemplates/twitter.jade", data, function(err, html){
 				if(!err){
 					cb(null, html);

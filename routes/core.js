@@ -23,7 +23,7 @@ exports.lookup = function(req, res){
 	var url = buildApiUrl(req.body.email);
 	http.get(url).end(function(response){
 		fc_response = response;
-	//	buildTemplate();
+		buildTemplate();
 	});
 
 }
@@ -93,7 +93,7 @@ function sendEmail(err, results){
 
 	_.each(results, function(profile,index){
 		template_content.push({
-			name: "block-"+index,
+			name: "block"+index,
 			content: profile
 		});
 	});
@@ -133,6 +133,7 @@ function buildTemplate(){
 			socialProfiles.push(func);
 		}
 	});
+	
 	async.parallel(socialProfiles, sendEmail);
 }
 
