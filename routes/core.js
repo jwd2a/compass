@@ -20,10 +20,9 @@ var Mandrill = new mandrill.Mandrill("p1swUYDPhBnKB1aZNmTl6w");
 
 
 exports.lookup = function(req, res){
-	var url = buildApiUrl(req.query.email);
+	var url = buildApiUrl(req.body.email);
 	http.get(url).end(function(response){
 		fc_response = response;
-		console.log(response.body);
 	//	buildTemplate();
 	});
 

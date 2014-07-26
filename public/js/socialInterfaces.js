@@ -55,6 +55,11 @@ exports.getGoogle = function(cb){
 	cb(err, data);
 }
 
+exports.getFoursquare = function(cb){
+	console.log("get foursquare");
+	cb(err, data);
+}
+
 exports.getGooglePlus = function(response, cb){
 	if(response.bio){
 		jade.renderFile("public/components/emailTemplates/googleplus.jade", response, function(err, html){
