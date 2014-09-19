@@ -30,7 +30,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 
-app.post('/people', core.lookup);
+app.get('/people', core.lookup);
 
 app.post('/users', user.create);
 

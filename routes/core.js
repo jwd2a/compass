@@ -20,10 +20,12 @@ var Mandrill = new mandrill.Mandrill("p1swUYDPhBnKB1aZNmTl6w");
 
 
 exports.lookup = function(req, res){
-	var url = buildApiUrl(req.body.email);
+	var url = buildApiUrl(req.query.email);
 	http.get(url).end(function(response){
 		fc_response = response;
-		buildTemplate();
+		//buildTemplate();
+		console.log(fc_response);
+		res.send(fc_response.body.socialProfiles);
 	});
 
 }
